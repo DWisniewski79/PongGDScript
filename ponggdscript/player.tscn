@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqvl10gnpeb2q"]
+
+[ext_resource type="Texture2D" uid="uid://bh8djqsovbp5b" path="res://images/paddle.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://ckhhqcpkg1p3t" path="res://logic/player.gd" id="1_onrkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
+size = Vector2(10.25, 35)
+
+[node name="Player" type="Area2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_onrkg")
+speed = 4000
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.125, -0.5)
+shape = SubResource("RectangleShape2D_sh265")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

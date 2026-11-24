@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://duyng2cyexipg"]
+
+[ext_resource type="Script" uid="uid://bp1hbhqrt5qoa" path="res://logic/floor_ceiling.gd" id="1_tampc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cisk"]
+size = Vector2(1162, 27)
+
+[node name="Ceiling" type="Area2D"]
+script = ExtResource("1_tampc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(320, -10)
+shape = SubResource("RectangleShape2D_6cisk")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

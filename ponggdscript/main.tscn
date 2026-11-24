@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo1umqnjgy6hu"]
+
+[ext_resource type="PackedScene" uid="uid://dqvl10gnpeb2q" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://duyng2cyexipg" path="res://ceiling.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bwh13ygdey16i" path="res://ball.tscn" id="3_1bvp3"]
+
+[node name="main" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(85, 224)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -4096
+anchors_preset = -1
+anchor_left = 0.103
+anchor_top = 0.075
+anchor_right = 0.103
+anchor_bottom = 0.075
+offset_left = -117.656
+offset_top = -84.6
+offset_right = 1277.34
+offset_bottom = 841.4
+color = Color(0, 0, 0, 1)
+
+[node name="Floor" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(320, 410)
+
+[node name="Ceiling" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(320, -10)
+
+[node name="Ball" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(450, 234)
